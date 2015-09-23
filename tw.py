@@ -7,7 +7,7 @@ contacts = pandas.read_csv('contacts.csv', usecols=['Account ID', 'Consumer Emai
 contacts = contacts.drop_duplicates(subset='Consumer Email')
 contacts.rename(columns={'Consumer Email': 'Email'}, inplace=True)
 contacts['Email'] = contacts['Email'].str.lower()
-# the tw.csv comes from MailChimp in this format:
+# the tw.csv comes this format:
 # "Email Address","First Name","Last Name",user__pk,"subscription starts","subscription ends","Texas Weekly",EMAIL_TYPE,MEMBER_RATING,OPTIN_TIME,OPTIN_IP,CONFIRM_TIME,CONFIRM_IP,LATITUDE,LONGITUDE,GMTOFF,DSTOFF,TIMEZONE,CC,REGION,LAST_CHANGED,LEID,EUID,NOTES
 
 tw = pandas.read_csv('tw.csv', usecols=['Email Address', 'First Name', 'Last Name', 'EUID'])
